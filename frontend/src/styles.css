@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --primary-color: #51DA4C;
+}
+
+/* reset.css */
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Remove default margins and padding */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+figcaption,
+pre,
+hr,
+fieldset,
+legend,
+input,
+textarea,
+select,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Set consistent vertical alignment */
+img,
+svg,
+fieldset {
+  vertical-align: middle;
+}
+
+/* Reset the font size */
+body {
+  font-size: 100%;
+}
+
+/* Set border-box box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove text decoration from anchor tags */
+a {
+  text-decoration: none;
+}
+
+/* Remove default focus outline */
+:focus {
+  outline: none;
+}
+
+/* Reset table styles */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

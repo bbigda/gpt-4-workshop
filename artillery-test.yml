@@ -1,0 +1,21 @@
+config:
+  target: 'http://localhost:8080' # Replace with your API URL
+  phases:
+    - duration: 60 # The test will run for 60 seconds
+      arrivalRate: 10 # 5 new users will arrive every second
+
+scenarios:
+  - name: "Add and fetch persons"
+    flow:
+      - post:
+          url: "/api/persons"
+          json:
+            firstName: "John {{ $randomNumber(1, 10000) }}"
+            lastName: "Doe {{ $randomNumber(1, 10000) }}"
+      - get:
+          url: "/api/persons"
+
+  - name: "Fetch persons"
+    flow:
+      - get:
+          url: "/api/persons"

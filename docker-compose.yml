@@ -1,0 +1,54 @@
+version: "3.9"
+
+networks:
+  my_network:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:13
+    env_file:
+      - db.env
+    environment:
+      POSTGRES_DB: your_database
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - my_network
+
+  redis:
+    image: redis:6.2
+    ports:
+      - "6379:6379"
+    networks:
+      - my_network
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - db.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/your_database
+      SPRING_REDIS_HOST: redis
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - my_network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - my_network
+
+volumes:
+  db-data:
+

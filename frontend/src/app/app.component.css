@@ -1,0 +1,118 @@
+/* Variables for colors */
+
+
+/* General styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.nav-logo svg {
+  fill: var(--text-color); /* Replace with the desired color */
+}
+
+/* Navigation bar */
+nav {
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+}
+
+nav svg {
+  fill: white;
+  height: 40px;
+  width: auto;
+}
+
+nav h1 {
+  color: var(--text-color);
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+/* Form styles */
+form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 500px;
+  padding: 20px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px;
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+form button:disabled {
+  background-color: #999;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* List of persons */
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+.column {
+  flex-basis: 50%;
+  padding: 1rem;
+}
+
+.left {
+  /* Add any styles specific to the left column */
+}
+
+.right {
+  /* Add any styles specific to the right column */
+}

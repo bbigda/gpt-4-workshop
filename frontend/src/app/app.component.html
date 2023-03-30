@@ -1,0 +1,40 @@
+<!-- Navigation bar -->
+<nav class="nav-logo">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+    <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50,10 L50,90 M90,50 L10,50 M62.5,37.5 L37.5,62.5 M62.5,62.5 L37.5,37.5"/>
+      <circle cx="50" cy="50" r="40"/>
+    </g>
+  </svg>
+  <h1>GTP-4 Angular App</h1>
+</nav>
+
+
+<!-- Two-column layout -->
+<div class="container">
+  <!-- Left column: form -->
+  <div class="column left">
+    <h1>Form</h1>
+    <!-- Add form for creating a new person -->
+    <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName" required />
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName" required />
+      </div>
+      <button type="submit" [disabled]="!personForm.valid">Save Person</button>
+    </form>
+
+  </div>
+
+  <!-- Right column: list -->
+  <div class="column right">
+    <h1>Persons list</h1>
+    <ul>
+      <li *ngFor="let person of persons">{{ person.firstName }} {{ person.lastName }}</li>
+    </ul>
+  </div>
+</div>
